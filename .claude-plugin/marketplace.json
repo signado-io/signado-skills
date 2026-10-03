@@ -1,0 +1,15 @@
+{
+  "name": "signado",
+  "description": "Signado plugins for Claude Code",
+  "owner": {
+    "name": "Signado",
+    "email": "hello@signado.io"
+  },
+  "plugins": [
+    {
+      "name": "signado",
+      "source": "./",
+      "description": "Lead generation tool that finds people posting and commenting about your market on LinkedIn, and tells you who to contact and what to say."
+    }
+  ]
+}

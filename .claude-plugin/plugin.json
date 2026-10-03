@@ -1,0 +1,28 @@
+{
+  "name": "signado",
+  "displayName": "Signado",
+  "version": "1.0.0",
+  "description": "Lead generation tool that finds people posting and commenting about your market on LinkedIn, and tells you who to contact and what to say.",
+  "author": {
+    "name": "Signado",
+    "email": "hello@signado.io",
+    "url": "https://signado.io"
+  },
+  "homepage": "https://signado.io/mcp?utm_source=claude-code&utm_medium=plugin&utm_campaign=signado-skills",
+  "repository": "https://github.com/signado-io/signado-skills",
+  "license": "MIT",
+  "keywords": [
+    "signado",
+    "linkedin",
+    "lead-generation",
+    "warm-leads",
+    "prospecting",
+    "outreach",
+    "mcp"
+  ],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://signado.io/help/mcp/mcp-overview",
+  "supportUrl": "https://signado.io/contact",
+  "privacyPolicyUrl": "https://signado.io/legal/privacy",
+  "termsOfServiceUrl": "https://signado.io/legal/terms"
+}

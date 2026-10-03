@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "signado": {
+      "type": "http",
+      "url": "https://mcp.signado.io/mcp"
+    }
+  }
+}
