@@ -18,9 +18,9 @@ Turn the latest Signado discovery runs into a short brief: who to contact, what 
 2. If it returns nothing, call `list_warm_leads` with `discovered_after` set to 24 hours ago and `limit` 20.
 3. For each lead, show:
    - name, role and company
-   - the exact post or comment that surfaced them, quoted, and the source that found them
+   - the exact post or comment that surfaced them, quoted (for someone who reacted, the post they reacted to), and the source that found them
    - the next move Signado suggests (contact today, comment on the post, find the right person, or skip)
-   - one suggested opening line that references what they said
+   - one suggested opening line that references what they said, or the post they reacted to
 4. When the user wants the full story on one person, call `get_warm_lead_detail` with their `contact_id`.
 5. Ask which leads are worth contacting before doing anything paid.
 6. For approved leads, call `draft_message` with their `contact_ids` (at most 5 per call) and a new `idempotency_key`. It uses the LinkedIn DM template by default; call `list_templates` first if the user wants another template.

@@ -14,11 +14,11 @@ Follow the audience of competitors and creators your buyers pay attention to, on
 
 ## Steps
 
-1. Ask the user for up to three competitors or creators, as LinkedIn profile URLs (`linkedin.com/in/...`) or Company pages (`linkedin.com/company/...`), and whether to find the people who comment on their posts or the people who react to them.
+1. Ask the user for up to three competitors or creators, as LinkedIn profile URLs (`linkedin.com/in/...`) or Company pages (`linkedin.com/company/...`), and whether to find the people who comment on or react to their posts (the default), only the people who comment, or only the people who react.
 2. Ask when to check them:
    - daily: `{"mode": "daily"}`
    - selected weekdays at one local time: `{"mode": "custom", "weekdays": [1, 2, 3, 4, 5], "local_time": "08:00", "timezone": "Europe/London"}` (ISO weekdays, 1 is Monday, and an IANA timezone)
-3. For each one, call `add_source` with `source_type` `competitor_creator` for a profile or `company` for a Company page, the `profile_url`, the `schedule`, `post_engagement_scope` (`commenters` or `reactors`; omitted keeps the saved choice, commenters for a new source), and `confirm` false. Show the projected credit cost it returns.
+3. For each one, call `add_source` with `source_type` `competitor_creator` for a profile or `company` for a Company page, the `profile_url`, the `schedule`, `post_engagement_scope` (`both` for commenters and reactors, `commenters` or `reactors`; omitted keeps the saved choice, `both` for a new source), and `confirm` false. Show the projected credit cost it returns.
 4. Only after the user confirms, repeat the call with `confirm` true.
 5. To change timing later, call `set_source_schedule` with the `source_id` or exact `source_name`, the new `schedule` and `confirm` false, then true once the user agrees. Changes apply to future runs only.
 6. After runs complete, call `get_best_of_run` with each `source_id` and show the new leads with what they commented on, or the post they reacted to, and why they look like the user's buyers.
@@ -27,6 +27,6 @@ Follow the audience of competitors and creators your buyers pay attention to, on
 ## Rules
 
 - Monitoring spends credits on every new warm lead found. Confirm the projected cost before activating any source.
-- By default Signado finds the people who comment. Set the source to Reactors to find the people who react to those posts instead.
+- By default Signado finds the people who comment on or react to those posts. Set the source to Commenters or Reactors to find only one of them.
 - A reaction has no text, so your outreach can mention the post, not something they wrote.
 - Signado never logs into LinkedIn. Never ask for LinkedIn credentials or cookies.
