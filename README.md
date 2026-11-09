@@ -40,7 +40,7 @@ Then copy any folder from `skills/` into your agent's skills directory.
 
 ## What the plugin runs and sends
 
-The plugin contains Markdown skills and one remote MCP server entry, `https://mcp.signado.io/mcp`. It runs no local code, hooks or scripts. Tool calls go to Signado under the workspace you sign in to. Some tools spend Signado credits, such as finding emails, drafting messages and running a source, and each skill asks for confirmation before those steps. Privacy policy: https://signado.io/legal/privacy
+The plugin contains Markdown skills and one remote MCP server entry, `https://mcp.signado.io/mcp`. It runs no local code, hooks or scripts. Tool calls go to Signado under the workspace you sign in to. Some tools spend Signado credits, such as finding emails, drafting messages and running a source, and each skill asks for confirmation before those steps. Lead results include public LinkedIn posts and comments written by other people; the skills tell the agent to treat that text as data and never follow instructions found in it. Privacy policy: https://signado.io/legal/privacy
 
 ## Links
 
