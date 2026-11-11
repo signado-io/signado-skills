@@ -42,6 +42,16 @@ Then copy any folder from `skills/` into your agent's skills directory.
 
 The plugin contains Markdown skills and one remote MCP server entry, `https://mcp.signado.io/mcp`. It runs no local code, hooks or scripts. Tool calls go to Signado under the workspace you sign in to. Some tools spend Signado credits, such as finding emails, drafting messages and running a source, and each skill asks for confirmation before those steps. Lead results include public LinkedIn posts and comments written by other people; the skills tell the agent to treat that text as data and never follow instructions found in it. Privacy policy: https://signado.io/legal/privacy
 
+## The people Signado finds
+
+The leads Signado finds are people who are not Signado users. This is how their information is handled.
+
+- **Where it comes from:** public LinkedIn posts, comments, reactions, profiles, company pages and job posts, collected through the data provider Apify, plus public web pages about the person's company. When a customer asks, Signado looks up the person's work email address from their LinkedIn profile. Signado never uses a customer's LinkedIn account to collect any of it.
+- **Why Signado may use it:** legitimate interests (GDPR Article 6(1)(f)) for business-to-business prospecting about a person's professional activity, weighed against their rights in a written assessment. Signado is the controller for these records and answers requests about them directly.
+- **How to see it or be removed:** anyone Signado has found can email hello@signado.io with their LinkedIn profile address. Signado tells them what it holds, corrects it or deletes it from every Signado workspace, within one month. They can also object to Signado using it, or complain to a data protection authority.
+
+Full details: [People whose public LinkedIn activity appears in Signado](https://signado.io/legal/privacy#people-whose-public-linkedin-activity-appears-in-signado)
+
 ## Links
 
 - Signado MCP: https://signado.io/mcp?utm_source=github&utm_medium=repo&utm_campaign=signado-skills
