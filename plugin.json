@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "signado",
+  "version": "1.0.2",
+  "description": "Lead generation tool that finds people posting and commenting about your market on LinkedIn, and tells you who to contact and what to say.",
+  "author": {
+    "name": "Signado",
+    "email": "hello@signado.io",
+    "url": "https://signado.io"
+  },
+  "homepage": "https://signado.io/mcp?utm_source=hermes&utm_medium=plugin&utm_campaign=signado-skills",
+  "repository": "https://github.com/signado-io/signado-skills",
+  "license": "MIT",
+  "keywords": [
+    "signado",
+    "linkedin",
+    "lead-generation",
+    "warm-leads",
+    "prospecting",
+    "outreach",
+    "mcp"
+  ],
+  "extensions": {
+    "com.nousresearch.hermes": {
+      "servers": {
+        "signado": {
+          "trust": "untrusted"
+        }
+      }
+    }
+  }
+}
