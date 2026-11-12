@@ -23,6 +23,23 @@ claude plugin install signado@signado
 
 Then run `/mcp` in Claude Code, select the Signado server and sign in to your workspace. No API key is needed. Ask for your warm leads, or run a skill directly, for example `/signado:signado-warm-lead-brief`.
 
+## Install in Hermes Agent
+
+This repository is also a [Hermes Agent](https://hermes-agent.nousresearch.com) plugin. Hermes reads `plugin.json` and `mcp.json` at the root, and the same three skills.
+
+```bash
+hermes plugins install signado-io/signado-skills --enable
+```
+
+Ask Hermes for your warm leads. On first use a browser opens the Signado sign-in: choose your workspace and approve. No API key is needed. The skills load as `signado:signado-warm-lead-brief`, `signado:signado-post-engagement-catcher` and `signado:signado-competitor-audience-watch`.
+
+What the Hermes plugin runs and sends:
+
+- **Sign-in runs one local program.** A Hermes plugin can't switch on OAuth for a remote server, so `mcp.json` starts [`mcp-remote`](https://github.com/geelen/mcp-remote) version 0.1.49, pinned, through `npx` (Node.js 18 or later). On first use it registers a sign-in client named "Hermes Agent (Signado)" with Signado's sign-in service, opens your browser and a local callback port, and keeps your sign-in tokens in `~/.mcp-auth` on your machine. The package holds no key or secret.
+- **Network.** Every tool call goes to `https://mcp.signado.io/mcp` and acts on the workspace you chose at sign-in. The tool list comes from that server at runtime.
+- **Approvals.** `plugin.json` marks the server `untrusted`, so Hermes asks you before every tool that is not read-only, and refuses those tools in unattended runs. Only `ping` and the tools that read leads, exports and templates run without asking. `find_email`, `draft_message`, `preview_source`, `add_source`, `set_source_schedule` and `run_source_once` spend Signado credits.
+- **Nothing else.** No hooks, no Python, no telemetry and no self-updater.
+
 ## Use the skills in other agents
 
 Connect the Signado MCP server to your agent with OAuth sign-in. No API key is needed.
